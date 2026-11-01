@@ -4,19 +4,263 @@
 <head>
 <meta charset="UTF-8">
 <title>Pokemon Team Type Balancer</title>
-<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<div class="container">
+
 <header>
+<h1>Pokemon Team Type Balancer</h1>
 </header>
 
 <main>
+<h2>This tool recommends you party members that fill in weaknesses based on your current party. Select your game version, and any other settings that apply, then enter your current party members. Your partys current weak points will be displayed, and the pokemon recommended will help fill those weak points.</h2>
+
+<div class="options">
+    <select>
+        <option value="">Select Game Version</option>
+        <option value="1">Red</option>
+        <option value="2">Blue</option>
+        <option value="3">Yellow</option>
+        <option value="4">Fire Red</option>
+        <option value="5">Leaf Green</option>
+    </select>
+
+    <label>
+        <input type="checkbox" name="final" value="1">
+        Only Final Evolutions?
+    </label>
+
+    <label>
+        <input type="checkbox" name="trade" value="2">
+        Exclude Trade Evolutions?
+    </label>
+</div>
+
+<div class="party-selector">
+
+    <div class="pokemon-slot">
+        <input type="text" list="pokemon" placeholder="Pokemon 1">
+        <div class="pokemonInfo">
+            <img class="pokemonSprite" width="150" hidden>
+            <p class="pokemonTypes"></p>
+        </div>
+    </div>
+
+    <div class="pokemon-slot">
+        <input type="text" list="pokemon" placeholder="Pokemon 2">
+        <div class="pokemonInfo">
+            <img class="pokemonSprite" width="150" hidden>
+            <p class="pokemonTypes"></p>
+        </div>
+    </div>
+
+    <div class="pokemon-slot">
+        <input type="text" list="pokemon" placeholder="Pokemon 3">
+        <div class="pokemonInfo">
+            <img class="pokemonSprite" width="150" hidden>
+            <p class="pokemonTypes"></p>
+        </div>
+    </div>
+
+    <div class="pokemon-slot">
+        <input type="text" list="pokemon" placeholder="Pokemon 4">
+        <div class="pokemonInfo">
+            <img class="pokemonSprite" width="150" hidden>
+            <p class="pokemonTypes"></p>
+        </div>
+    </div>
+
+    <div class="pokemon-slot">
+        <input type="text" list="pokemon" placeholder="Pokemon 5">
+        <div class="pokemonInfo">
+            <img class="pokemonSprite" width="150" hidden>
+            <p class="pokemonTypes"></p>
+        </div>
+    </div>
+
+    <div class="pokemon-slot">
+        <input type="text" list="pokemon" placeholder="Pokemon 6">
+        <div class="pokemonInfo">
+            <img class="pokemonSprite" width="150" hidden>
+            <p class="pokemonTypes"></p>
+        </div>
+    </div>
+
+</div>
+
+<script src="app.js"></script>
+
+<datalist id="pokemon">
+    <option value="Bulbasaur">
+    <option value="Ivysaur">
+    <option value="Venusaur">
+    <option value="Charmander">
+    <option value="Charmeleon">
+    <option value="Charizard">
+    <option value="Squirtle">
+    <option value="Wartortle">
+    <option value="Blastoise">
+    <option value="Caterpie">
+    <option value="Metapod">
+    <option value="Butterfree">
+    <option value="Weedle">
+    <option value="Kakuna">
+    <option value="Beedrill">
+    <option value="Pidgey">
+    <option value="Pidgeotto">
+    <option value="Pidgeot">
+    <option value="Rattata">
+    <option value="Raticate">
+    <option value="Spearow">
+    <option value="Fearow">
+    <option value="Ekans">
+    <option value="Arbok">
+    <option value="Pikachu">
+    <option value="Raichu">
+    <option value="Sandshrew">
+    <option value="Sandslash">
+    <option value="Nidoran-F">
+    <option value="Nidorina">
+    <option value="Nidoqueen">
+    <option value="Nidoran-M">
+    <option value="Nidorino">
+    <option value="Nidoking">
+    <option value="Clefairy">
+    <option value="Clefable">
+    <option value="Vulpix">
+    <option value="Ninetales">
+    <option value="Jigglypuff">
+    <option value="Wigglytuff">
+    <option value="Zubat">
+    <option value="Golbat">
+    <option value="Oddish">
+    <option value="Gloom">
+    <option value="Vileplume">
+    <option value="Paras">
+    <option value="Parasect">
+    <option value="Venonat">
+    <option value="Venomoth">
+    <option value="Diglett">
+    <option value="Dugtrio">
+    <option value="Meowth">
+    <option value="Persian">
+    <option value="Psyduck">
+    <option value="Golduck">
+    <option value="Mankey">
+    <option value="Primeape">
+    <option value="Growlithe">
+    <option value="Arcanine">
+    <option value="Poliwag">
+    <option value="Poliwhirl">
+    <option value="Poliwrath">
+    <option value="Abra">
+    <option value="Kadabra">
+    <option value="Alakazam">
+    <option value="Machop">
+    <option value="Machoke">
+    <option value="Machamp">
+    <option value="Bellsprout">
+    <option value="Weepinbell">
+    <option value="Victreebel">
+    <option value="Tentacool">
+    <option value="Tentacruel">
+    <option value="Geodude">
+    <option value="Graveler">
+    <option value="Golem">
+    <option value="Ponyta">
+    <option value="Rapidash">
+    <option value="Slowpoke">
+    <option value="Slowbro">
+    <option value="Magnemite">
+    <option value="Magneton">
+    <option value="Farfetchd">
+    <option value="Doduo">
+    <option value="Dodrio">
+    <option value="Seel">
+    <option value="Dewgong">
+    <option value="Grimer">
+    <option value="Muk">
+    <option value="Shellder">
+    <option value="Cloyster">
+    <option value="Gastly">
+    <option value="Haunter">
+    <option value="Gengar">
+    <option value="Onix">
+    <option value="Drowzee">
+    <option value="Hypno">
+    <option value="Krabby">
+    <option value="Kingler">
+    <option value="Voltorb">
+    <option value="Electrode">
+    <option value="Exeggcute">
+    <option value="Exeggutor">
+    <option value="Cubone">
+    <option value="Marowak">
+    <option value="Hitmonlee">
+    <option value="Hitmonchan">
+    <option value="Lickitung">
+    <option value="Koffing">
+    <option value="Weezing">
+    <option value="Rhyhorn">
+    <option value="Rhydon">
+    <option value="Chansey">
+    <option value="Tangela">
+    <option value="Kangaskhan">
+    <option value="Horsea">
+    <option value="Seadra">
+    <option value="Goldeen">
+    <option value="Seaking">
+    <option value="Staryu">
+    <option value="Starmie">
+    <option value="Mr-Mime">
+    <option value="Scyther">
+    <option value="Jynx">
+    <option value="Electabuzz">
+    <option value="Magmar">
+    <option value="Pinsir">
+    <option value="Tauros">
+    <option value="Magikarp">
+    <option value="Gyarados">
+    <option value="Lapras">
+    <option value="Ditto">
+    <option value="Eevee">
+    <option value="Vaporeon">
+    <option value="Jolteon">
+    <option value="Flareon">
+    <option value="Porygon">
+    <option value="Omanyte">
+    <option value="Omastar">
+    <option value="Kabuto">
+    <option value="Kabutops">
+    <option value="Aerodactyl">
+    <option value="Snorlax">
+    <option value="Articuno">
+    <option value="Zapdos">
+    <option value="Moltres">
+    <option value="Dratini">
+    <option value="Dragonair">
+    <option value="Dragonite">
+    <option value="Mewtwo">
+    <option value="Mew">
+</datalist>
+
+<h3>Your Weaknesses:</h3>
+
+<div></div>
+
+<h3>Party Recommendations:</h3>
+
+<div></div>
+
 </main>
 
 <footer>
 </footer>
+
+</div>
 
 </body>
 
