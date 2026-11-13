@@ -13,6 +13,7 @@ pokemonSlots.forEach(slot => {
         if (!pokemonName) {
             sprite.hidden = true;
             types.textContent = "";
+            calcTypes();
             return;
         }
 
@@ -38,14 +39,53 @@ pokemonSlots.forEach(slot => {
             sprite.hidden = !sprite.src;
         }
 
-        //note: add/remove types to array or list or somethting for recommendations. (Maybe do this in a different function entirely, would be kinda a pain to do it here. have this function call another function (after everything is done here) that calculcates the types)
-
         types.textContent = data.types
             .map(type => type.type.name)
             .join("/");
+
+
+    calcTypes();
     });
 });
 
+function calcTypes() {
 
+    //no fairy bcs gen 1 and 3 only
+    const allTypes = ["normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel"];
+    const yourTypes = [];
 
-//probablt need 2-3 more functions, one to calculate current types & display thieir weaknesses. one to display the recommended options (remember to calculate for game ver, evos, trades). maybe one for a button to quickly add a recomendation to your party.
+    pokemonSlots.forEach(slot => {
+
+        const types = slot.querySelector(".pokemonTypes");
+
+        types.textContent.split("/").forEach(type => {
+            if (!yourTypes.includes(type)) {
+                yourTypes.push(type);
+            }
+        });
+    });
+
+    const missingTypes = allTypes.filter(type => !yourTypes.includes(type));
+    console.log(missingTypes);
+
+    document.querySelector(".allTypes").textContent = missingTypes.join(" / ");
+}
+
+function filterReccomendations() {
+
+    const pokemon = ["bulbasaur", ""];
+    const fireRed = [];
+    const leafGreen = [];
+    const red = [];
+    const blue = [];
+    const yellow = [];
+    const tradeEvos = [];
+    const preEvos = [];
+    const filteredPokemon = []
+
+//probably have another array with each name hardcoded -> remove version exclusives, trade evos, pre evos the same way as calcTypes -> call api for all remaining in the array and dispay them. this is a lot of api calls so maybe look into cacheing them, still 151 calls when the page opens but atleast it wont do it every time you add a pokemon. its probably better to modify the first function awsell and just have everything pull from a cache, should be a super easy change.
+}
+
+function quickAdd() {
+//probably just a click listner on the image -> adds name to first blank slot.
+}
