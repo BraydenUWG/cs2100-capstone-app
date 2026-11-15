@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Pokemon Team Type Balancer</title>
+<title>Pokémon Team Type Balancer</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,15 +12,15 @@
 <div class="container">
 
 <header>
-<h1>Pokemon Team Type Balancer</h1>
+<h1>Pokémon Team Type Balancer</h1>
 </header>
 
 <main>
-<h2>This tool recommends you party members that fill in weaknesses based on your current party. Select your game version, and any other settings that apply, then enter your current party members. Your partys current weak points will be displayed, and the pokemon recommended will help fill those weak points.</h2>
+<h2>This tool recommends you party members that fill in weaknesses based on your current party. Select your game version, and any other settings that apply, then enter your current party members. Your partys current weak points will be displayed, and the pokémon recommended will help fill those weak points.</h2>
 
 <div class="options">
-    <select>
-        <option value="">Select Game Version</option>
+    <select id="version">
+        <option value="0">Select Game Version</option>
         <option value="1">Red</option>
         <option value="2">Blue</option>
         <option value="3">Yellow</option>
@@ -29,12 +29,12 @@
     </select>
 
     <label>
-        <input type="checkbox" name="final" value="1">
+        <input type="checkbox" id="final">
         Only Final Evolutions?
     </label>
 
     <label>
-        <input type="checkbox" name="trade" value="2">
+        <input type="checkbox" id="trade">
         Exclude Trade Evolutions?
     </label>
 </div>
@@ -249,11 +249,11 @@
 
 <h3>Your Team Is Missing:</h3>
 
-<p class="allTypes">normal / fire / water / electric / grass / ice / fighting / poison / ground / flying / psychic / bug / rock / ghost / dragon / dark / steel</p>
+<p class="allTypes">normal / fire / water / electric / grass / ice / fighting / poison / ground / flying / psychic / bug / rock / ghost / dragon / dark / steel / fairy</p>
 
 <h3>Party Recommendations:</h3>
 
-<div></div>
+<div id="recc"></div>
 
 </main>
 

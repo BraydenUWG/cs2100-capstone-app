@@ -28,6 +28,7 @@ h2 {
     flex-direction: row;
     justify-content: space-evenly;
     gap: 20px;
+    padding-top: 30px;
 }
 
 .options select {
@@ -48,6 +49,13 @@ h2 {
     justify-content: space-evenly;
 }
 
+.pokemon-slot {
+    flex: 1;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .pokemonInfo {
     display: flex;
     flex-direction: column;
@@ -65,5 +73,36 @@ h2 {
 
 /*trying to find that one grey with edge shadow menu style i like from the pokemon games and use that for the webpage, canjt remeber where its from right now.
 might ditch the font, not sure if i can get it to a point where i like it.
-also this pokémon insetead of pokemon lol
 */
+
+#recc {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 150px);
+    gap: 10px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.pokemon-card {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+
+    min-width: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.pokemon-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.pokemon-card p {
+    margin: 5px 0;
+    text-align: center;
+}
